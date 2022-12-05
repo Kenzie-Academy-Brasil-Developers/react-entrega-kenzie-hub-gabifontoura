@@ -19,5 +19,15 @@ export const StyledForm = styled.form`
 
    }
 
+   .main-nav-active{
+        color: var(--color-grey-0);
+        text-align: center;
+        background-color: var(--color-grey-1);
+        height: 3rem;
+        justify-content: center;
+        padding-top: 0.75rem;
+        border-radius: var(--radius-2);
+   }
 
 `
+

@@ -5,7 +5,7 @@ import { api } from "../../services/api";
 import { Container } from "../../styles/Containers";
 import { StyledRegisterPage } from "./styles";
 import {toast} from "react-toastify";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { StyledFlexBox } from "../../styles/StyledFlexBox";
 
 
@@ -31,7 +31,7 @@ const RegisterPage = () => {
       <Container>
         <StyledFlexBox>
             <Header />
-            <Link to="/">Voltar</Link>
+            <NavLink  to="/" className="main-nav-active" >Voltar</NavLink>
         </StyledFlexBox>
         <SignUpForm loading={loading} userRegister={userRegister}/>
       </Container>
