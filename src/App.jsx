@@ -13,6 +13,7 @@ function App() {
     try {
       setLoading(true);
       const response = await api.post("/sessions", formData);
+      localStorage.setItem("@TOKEN", response.data.token)
       toast.success(response.statusText);
       setUser(response.data.user);
       navigate("/home")
@@ -23,10 +24,18 @@ function App() {
       setLoading(false);
     }
   }
+
+
+  function userLogout(){
+    localStorage.removeItem("@TOKEN")
+    setUser(null)
+    navigate("/")
+  }
+
   return (
     <div className="App">
       <>
-        <RoutesMain userLogin={userLogin} user={user}/>
+        <RoutesMain userLogin={userLogin} user={user} userLogout={userLogout}/>
         <ToastContainer
           position="top-right"
           autoClose={3000}

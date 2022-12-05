@@ -4,6 +4,7 @@ export const StyledFlexBox= styled.div`
     display: flex;
     justify-content: space-between;
 
+
 `
 
 export const StyledFlexBoxCol = styled.div`

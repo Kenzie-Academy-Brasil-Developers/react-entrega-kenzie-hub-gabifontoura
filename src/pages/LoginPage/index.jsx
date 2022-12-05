@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header'
 import LoginForm from '../../components/LoginForm'
-import { Container } from '../../styles/Container'
+import { Container2 } from '../../styles/Containers'
 
 import { StyledLoginPage } from './styles'
 
@@ -10,11 +10,11 @@ const LoginPage = ({userLogin}) => {
   return (
     <StyledLoginPage>
 
-        <Container>
+        <Container2>
 
             <Header />
             <LoginForm userLogin={userLogin}/>
-        </Container>
+        </Container2>
 
     </StyledLoginPage>
     

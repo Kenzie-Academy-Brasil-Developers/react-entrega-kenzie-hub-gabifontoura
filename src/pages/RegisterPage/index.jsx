@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/Header";
 import SignUpForm from "../../components/SignUpForm";
 import { api } from "../../services/api";
-import { Container } from "../../styles/Container";
+import { Container } from "../../styles/Containers";
 import { StyledRegisterPage } from "./styles";
 import {toast} from "react-toastify";
 import { Link } from "react-router-dom";

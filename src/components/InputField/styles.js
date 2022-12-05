@@ -5,6 +5,7 @@ export const StyledFieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
   gap: .5rem;
+
 `;
 
 export const StyledLabel = styled.label`
@@ -23,6 +24,7 @@ export const StyledInput = styled.input`
 
   &:focus {
     border: 2px solid var(--color-primary-focus);
+
   }
 
   @media (max-width: 800px) {
