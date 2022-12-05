@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
    z-index: 1;
    justify-content: space-between;
    height: max-content;
-   margin-bottom: 2rem;
+   margin-bottom: 1rem;
 
   
 

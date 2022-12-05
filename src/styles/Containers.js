@@ -9,7 +9,7 @@ export const Container = styled.main`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 4rem 23.5rem;
+    padding: 3rem 21.25rem 0 21.25rem;
     gap:2rem;
 
 
@@ -28,7 +28,7 @@ export const Container2 = styled.main`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 4rem 28.5rem;
+    padding: 3rem 28.5rem 0 28.5rem;
     gap:2rem;
 
 
