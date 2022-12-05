@@ -1,6 +1,6 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import ProtectedRoutes from "../components/ProtectRoutes";
+import { Route, Routes } from "react-router-dom";
+import ProtectedRoutes from "../components/ProtectedRoutes";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
