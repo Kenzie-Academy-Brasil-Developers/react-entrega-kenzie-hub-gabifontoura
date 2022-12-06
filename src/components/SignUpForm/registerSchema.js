@@ -22,8 +22,8 @@ export const registerSchema = yup.object().shape({
     .min(6, "É necessário pelo menos 8 caracteres"),
   confirmPassword: yup
     .string()
-    // .required("Digite a senha novamente")
-    .oneOf([yup.ref("password"),null], "As senhas devem ser iguais"),
+    .required("Digite a senha novamente")
+    .oneOf([yup.ref("password")], "As senhas devem ser iguais"),
   bio: yup
     .string()
     .required("Bio obrigatória")
