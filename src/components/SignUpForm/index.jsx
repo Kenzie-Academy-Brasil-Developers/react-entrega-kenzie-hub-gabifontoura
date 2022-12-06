@@ -20,7 +20,7 @@ const SignUpForm = ({ loading, userRegister }) => {
       name: "",
       email: "",
       password: "",
-
+      confirmPassword: "",
       bio: "",
       contact: "",
       course_module: "",
@@ -28,7 +28,7 @@ const SignUpForm = ({ loading, userRegister }) => {
   });
 
   const submit = (data) => {
-    console.log(data);
+    
     reset();
     userRegister(data);
   };
@@ -88,6 +88,7 @@ const SignUpForm = ({ loading, userRegister }) => {
         id="confirmPassword"
         label="Confirmar senha"
         placeholder="Digite novamente sua senha"
+        register={register("confirmPassword")}
         disabled={loading}
       />
       {errors.confirmPassword?.message && (

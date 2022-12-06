@@ -12,7 +12,9 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledInput = styled.input`
-  outline: none;
+
+
+  
   border: none;
   border-radius: var(--radius-1);
   background-color: var(--color-grey-2);
@@ -22,7 +24,8 @@ export const StyledInput = styled.input`
   width: 22rem;
 
   &:focus {
-    border: 2px solid var(--color-primary-focus);
+    
+    outline: 2px solid var(--color-primary-focus);
   }
 
   @media (max-width: 800px) {

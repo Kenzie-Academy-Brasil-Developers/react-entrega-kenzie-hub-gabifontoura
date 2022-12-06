@@ -11,7 +11,7 @@ export const StyledFlexBox = styled.div`
   }
 
   @media (max-width: 400px) {
-    margin: 0.6rem 2rem ;
+    margin: 0.6rem 0rem ;
   }
 `;
 
