@@ -58,7 +58,7 @@ const LoginForm = ({ userLogin }) => {
         </StyledText>
       )}
 
-      <StyledButton type="submit" buttonStyle="primary" buttonSize="default">
+      <StyledButton type="submit" buttonStyle="primary" buttonSize="default" disabled={loading}>
         {loading ? "Entrando" : "Entrar"}
       </StyledButton>
 

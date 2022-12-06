@@ -40,6 +40,11 @@ export const StyledButton = styled.button`
             background:var(--color-primary-focus);
           
             }
+          &:disabled{
+            background:var(--color-primary-negative);
+          
+        }
+          }
 
           }
         `;
@@ -50,6 +55,15 @@ export const StyledButton = styled.button`
 
           &:hover {
             background: (--color-grey-2);
+          }
+        `;
+      case "darkGrey":
+        return css`
+          background: var(--color-grey-2);
+          color: var(--color-grey-0);
+
+          &:hover {
+            background: (--color-grey-1);
           }
         `;
     }

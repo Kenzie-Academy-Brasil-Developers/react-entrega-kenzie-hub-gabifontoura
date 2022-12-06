@@ -23,7 +23,7 @@ export const registerSchema = yup.object().shape({
   confirmPassword: yup
     .string()
     // .required("Digite a senha novamente")
-    .oneOf([yup.ref("password"), null], "As senhas devem ser iguais"),
+    .oneOf([yup.ref("password"),null], "As senhas devem ser iguais"),
   bio: yup
     .string()
     .required("Bio obrigatória")

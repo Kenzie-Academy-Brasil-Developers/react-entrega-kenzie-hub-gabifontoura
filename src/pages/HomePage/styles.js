@@ -11,6 +11,6 @@ export const StyledHomePage = styled.main`
   padding: 2rem 6rem;
 
   @media (max-width: 800px) {
-    width: 20rem;
+    padding: 2rem;
   }
 `;
