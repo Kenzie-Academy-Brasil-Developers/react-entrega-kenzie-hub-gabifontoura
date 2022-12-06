@@ -7,7 +7,7 @@ import { StyledText } from "../../styles/typhography";
 import { StyledHomePage } from "./styles";
 
 const HomePage = ({ user, userLogout }) => {
-  console.log(user);
+  
   return (
     <StyledHomePage>
       <StyledFlexBox>
@@ -15,7 +15,7 @@ const HomePage = ({ user, userLogout }) => {
         {user && (
           <StyledButton
             buttonSize="medium"
-            buttonStyle="secondary"
+            buttonStyle="darkGrey"
             onClick={() => userLogout()}
           >
             Sair
@@ -26,7 +26,7 @@ const HomePage = ({ user, userLogout }) => {
       {user && (
         <StyledFlexBoxCol>
           <StyledFlexBox>
-            <StyledText tag="h2">Olá, {user.name}</StyledText>
+            <StyledText tag="h2" fontSize="three">Olá, {user.name}</StyledText>
             <StyledText tag="p" fontSize="bodyText">
               {user.course_module}
             </StyledText>
