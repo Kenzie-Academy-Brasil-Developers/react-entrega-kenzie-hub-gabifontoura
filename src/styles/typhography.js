@@ -1,10 +1,6 @@
-
-
 import styled, { css } from "styled-components";
 
 import BaseText from "./BaseText";
-
-
 
 export const StyledText = styled(BaseText)`
   overflow: hidden;
@@ -21,7 +17,6 @@ export const StyledText = styled(BaseText)`
           font-size: 1.625rem;
 
           color: var(--color-primary);
-  
 
           @media (max-width: 800px) {
             font-size: 2rem;
@@ -66,7 +61,7 @@ export const StyledText = styled(BaseText)`
             font-size: var(--font-size-text-3);
           }
         `;
-         case "warnText":
+      case "warnText":
         return css`
           font-size: var(--font-size-text-4);
           color: var(--color-primary);

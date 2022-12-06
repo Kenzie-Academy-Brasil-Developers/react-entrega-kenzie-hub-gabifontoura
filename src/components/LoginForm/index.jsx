@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { StyledButton } from "../../styles/buttons";
 import { StyledText } from "../../styles/typhography";
 import InputField from "../InputField";
@@ -66,7 +66,9 @@ const LoginForm = ({ userLogin }) => {
         Ainda não possui uma conta?
       </StyledText>
 
-      <NavLink to="/register" className="main-nav-active" >Cadastre-se</NavLink>
+      <NavLink to="/register" className="main-nav-active">
+        Cadastre-se
+      </NavLink>
     </StyledForm>
   );
 };

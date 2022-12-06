@@ -4,25 +4,22 @@ import SignUpForm from "../../components/SignUpForm";
 import { api } from "../../services/api";
 import { Container } from "../../styles/Containers";
 import { StyledRegisterPage } from "./styles";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
 import { StyledFlexBox } from "../../styles/StyledFlexBox";
-
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
 
   const userRegister = async (formData) => {
     try {
-        setLoading(true);
-        const response = await api.post("users", formData);
-        toast.success(response.statusText)
-     
+      setLoading(true);
+      const response = await api.post("users", formData);
+      toast.success(response.statusText);
     } catch (error) {
-        toast.error(error.response.data.message)
-      
+      toast.error(error.response.data.message);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
   };
 
@@ -30,10 +27,12 @@ const RegisterPage = () => {
     <StyledRegisterPage>
       <Container>
         <StyledFlexBox>
-            <Header />
-            <NavLink  to="/" className="main-nav-active" >Voltar</NavLink>
+          <Header />
+          <NavLink to="/" className="main-nav-active">
+            Voltar
+          </NavLink>
         </StyledFlexBox>
-        <SignUpForm loading={loading} userRegister={userRegister}/>
+        <SignUpForm loading={loading} userRegister={userRegister} />
       </Container>
     </StyledRegisterPage>
   );

@@ -1,33 +1,24 @@
-
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledRegisterPage = styled.main`
+  background-color: var(--color-grey-4);
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
 
-    background-color: var(--color-grey-4);
-    display: flex;
-    flex-direction: column;
-    border: none;
-    width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
-    
-    
 
-    @media (max-width: 800px) {
-       width: 20rem;
-     
 
-   }
+  .main-nav-active {
+    color: var(--color-grey-0);
+    text-align: center;
+    background-color: var(--color-grey-2);
+    height: 2.5rem;
+    justify-content: center;
 
-   .main-nav-active{
-        color: var(--color-grey-0);
-        text-align: center;
-        background-color: var(--color-grey-2);
-        height: 2.5rem;
-        justify-content: center;
-        
-        border-radius: var(--radius-2);
-        padding: 0.5rem 1rem;
-   }
-`
-
+    border-radius: var(--radius-2);
+    padding: 0.5rem 1rem;
+  }
+`;
