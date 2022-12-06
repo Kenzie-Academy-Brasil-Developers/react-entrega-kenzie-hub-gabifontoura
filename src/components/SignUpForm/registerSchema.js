@@ -32,8 +32,5 @@ export const registerSchema = yup.object().shape({
     .string()
     .required("Digite um contato")
     .min(3, "O contato precisa de pelo menos 3 caracteres"),
-  course_module: yup
-    .string()
-    .required("Escolha um módulo"),
-
+  course_module: yup.string().required("Escolha um módulo"),
 });

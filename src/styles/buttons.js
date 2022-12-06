@@ -8,10 +8,9 @@ export const StyledButton = styled.button`
   border-radius: var(--radius-2);
   transition: 0.4s;
   color: ${({ color }) => (color ? color : "white")};
-  
+
   &:hover {
     filter: brightness(1.2);
-
   }
   ${({ buttonSize }) => {
     // eslint-disable-next-line default-case
@@ -46,17 +45,13 @@ export const StyledButton = styled.button`
         `;
       case "secondary":
         return css`
-          background:var(--color-grey-1);;
+          background: var(--color-grey-1);
           color: var(--color-grey-0);
 
           &:hover {
             background: (--color-grey-2);
-            
           }
         `;
     }
   }}
-
-
 `;
-

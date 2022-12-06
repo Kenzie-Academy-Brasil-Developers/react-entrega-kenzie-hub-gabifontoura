@@ -1,4 +1,3 @@
-
 import { useForm } from "react-hook-form";
 
 import InputField from "../InputField";
@@ -9,32 +8,29 @@ import { StyledFieldset, StyledLabel } from "../InputField/styles";
 import { StyledForm, StyledSelect } from "./styles";
 import { StyledButton } from "../../styles/buttons";
 
-const SignUpForm = ({loading, userRegister}) => {
-
-
+const SignUpForm = ({ loading, userRegister }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm({
     resolver: yupResolver(registerSchema),
     defaultValues: {
       name: "",
-      email:"",
-      password:"",
-      
-      bio:"",
-      contact:"",
-      course_module:"",
+      email: "",
+      password: "",
+
+      bio: "",
+      contact: "",
+      course_module: "",
     },
   });
 
   const submit = (data) => {
     console.log(data);
-    reset()
-    userRegister(data)
-
+    reset();
+    userRegister(data);
   };
   return (
     <StyledForm noValidate onSubmit={handleSubmit(submit)}>
@@ -132,11 +128,18 @@ const SignUpForm = ({loading, userRegister}) => {
         <StyledLabel>Selecionar módulo</StyledLabel>
         <StyledSelect {...register("course_module")} disabled={loading}>
           <option value="">Selecionar módulo</option>
-          <option value="Primeiro módulo (Introdução ao Frontend)">Primeiro módulo (Introdução ao Frontend)</option>
-          <option value="Segundo módulo (Frontend Avançado)">Segundo módulo (Frontend Avançado)</option>
-          <option value="Terceiro módulo (Introdução ao Backend)">Terceiro módulo (Introdução ao Backend)</option>
-          <option value="Quarto módulo (Backend Avançado)">Quarto módulo (Backend Avançado)</option>
-
+          <option value="Primeiro módulo (Introdução ao Frontend)">
+            Primeiro módulo (Introdução ao Frontend)
+          </option>
+          <option value="Segundo módulo (Frontend Avançado)">
+            Segundo módulo (Frontend Avançado)
+          </option>
+          <option value="Terceiro módulo (Introdução ao Backend)">
+            Terceiro módulo (Introdução ao Backend)
+          </option>
+          <option value="Quarto módulo (Backend Avançado)">
+            Quarto módulo (Backend Avançado)
+          </option>
         </StyledSelect>
       </StyledFieldset>
 
@@ -146,8 +149,13 @@ const SignUpForm = ({loading, userRegister}) => {
         </StyledText>
       )}
 
-      <StyledButton type="submit" buttonSize="default" buttonStyle="primary" disabled={loading}>
-        { loading ? "Cadastrando..." : "Cadastrar"}
+      <StyledButton
+        type="submit"
+        buttonSize="default"
+        buttonStyle="primary"
+        disabled={loading}
+      >
+        {loading ? "Cadastrando..." : "Cadastrar"}
       </StyledButton>
     </StyledForm>
   );
