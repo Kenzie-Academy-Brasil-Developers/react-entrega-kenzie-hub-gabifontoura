@@ -5,16 +5,16 @@ import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 
-const RoutesMain = ({ userLogin, user, userLogout }) => {
+const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage userLogin={userLogin} />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/" element={<ProtectedRoutes user={user} />}>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage/>} />
+      <Route path="/" element={<ProtectedRoutes/>}>
         <Route
           index
           path="/home"
-          element={<HomePage user={user} userLogout={userLogout} />}
+          element={<HomePage/>}
         />
       </Route>
     </Routes>

@@ -5,14 +5,13 @@ import { Container2 } from "../../styles/Containers";
 import {StyledFlexBoxCol} from "../../styles/StyledFlexBox"
 import { StyledLoginPage } from "./styles";
 
-const LoginPage = ({ userLogin }) => {
+const LoginPage = () => {
   return (
     <StyledLoginPage>
       <Container2>
         <StyledFlexBoxCol>
-
           <Header />
-          <LoginForm userLogin={userLogin} />
+          <LoginForm />
         </StyledFlexBoxCol>
       </Container2>
     </StyledLoginPage>

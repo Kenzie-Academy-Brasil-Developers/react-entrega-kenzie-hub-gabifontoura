@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
   border-radius: var(--radius-2);
   transition: 0.4s;
   color: ${({ color }) => (color ? color : "white")};
+  font-size: 1rem;
 
   &:hover {
     filter: brightness(1.2);
@@ -17,7 +18,7 @@ export const StyledButton = styled.button`
     switch (buttonSize) {
       case "default":
         return css`
-          height: 3.75rem;
+          height: 3rem;
           padding: 0 1.25rem;
         `;
       case "medium":

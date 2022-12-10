@@ -1,10 +1,13 @@
 import { Outlet, useNavigate } from "react-router-dom";
 
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { StyledText } from "../../styles/typhography";
+import { UserContext } from "../../providers/UserContext";
 
-const ProtectedRoutes = ({ user }) => {
-  const navigate = useNavigate();
+const ProtectedRoutes = () => {
+  const navigate= useNavigate();
+
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     if (!user) {

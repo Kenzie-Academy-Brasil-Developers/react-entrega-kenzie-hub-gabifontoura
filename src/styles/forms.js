@@ -1,21 +1,18 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-  background-color: var(--color-grey-3);
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
-  padding: 2rem;
-  gap: 1rem;
-  overflow-x: hidden;
+background-color: var(--color-grey-3);
+display: flex;
+flex-direction: column;
+align-self: center;
+justify-content: center;
+padding: 2rem;
+gap: 1rem;
+overflow-x: hidden;
 
-  
-
-  @media (max-width: 800px) {
-    width: 100%;
-
-  }
+@media (max-width: 800px) {
+  width: 100%;
+}
 
   .main-nav-active {
     color: var(--color-grey-0);
@@ -26,5 +23,4 @@ export const StyledForm = styled.form`
     padding-top: 0.75rem;
     border-radius: var(--radius-2);
   }
-
 `;
