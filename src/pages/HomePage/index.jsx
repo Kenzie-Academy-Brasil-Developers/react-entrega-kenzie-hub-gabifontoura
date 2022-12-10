@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Header from "../../components/Header";
+import { UserContext } from "../../providers/UserContext";
 import { StyledButton } from "../../styles/buttons";
 import { StyledFlexBox, StyledFlexBoxCol } from "../../styles/StyledFlexBox";
 import { StyledText } from "../../styles/typhography";
 import { StyledHomePage } from "./styles";
 
-const HomePage = ({ user, userLogout }) => {
+const HomePage = () => {
+
+  const { user, userLogout } = useContext(UserContext)
   
   return (
+    
     <StyledHomePage>
       <StyledFlexBox>
         <Header />
@@ -33,7 +37,7 @@ const HomePage = ({ user, userLogout }) => {
           </StyledFlexBox>
 
           <StyledText tag="h3">
-            Que pena! Estamos em desenvolvimento :({" "}
+            Que pena! Estamos em desenvolvimento :(
           </StyledText>
           <StyledText tag="h4">
             Nossa aplicação está em desenvolvimento, em breve teremos novidades

@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import { StyledButton } from "../../styles/buttons";
 import { StyledText } from "../../styles/typhography";
 import InputField from "../InputField";
-import { StyledForm } from "./styles";
+
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "./loginSchema";
+import { StyledForm } from "../../styles/forms";
+import { UserContext } from "../../providers/UserContext";
 
-const LoginForm = ({ userLogin }) => {
+const LoginForm = () => {
+  
   const [loading, setLoading] = useState(false);
+
+  const { userLogin } = useContext(UserContext)
 
   const {
     register,

@@ -1,7 +1,8 @@
 import React from "react";
+
 import { StyledFieldset, StyledInput, StyledLabel } from "./styles";
 
-const InputField = ({ id, label, type, register, placeholder, disabled }) => {
+const InputField = ({ id, label, type, register, placeholder, disabled}) => {
   return (
     <StyledFieldset>
       <StyledLabel htmlFor={id}>{label}</StyledLabel>
@@ -10,8 +11,10 @@ const InputField = ({ id, label, type, register, placeholder, disabled }) => {
         type={type}
         placeholder={placeholder}
         disabled={disabled}
+
         {...register}
       />
+
     </StyledFieldset>
   );
 };

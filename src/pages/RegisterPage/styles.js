@@ -17,7 +17,6 @@ export const StyledRegisterPage = styled.main`
     background-color: var(--color-grey-2);
     height: 2.5rem;
     justify-content: center;
-
     border-radius: var(--radius-2);
     padding: 0.5rem 1rem;
   }

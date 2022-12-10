@@ -1,52 +1,26 @@
-import { useState } from "react";
+
+import { useContext } from "react";
+import { UserContext } from "./providers/UserContext";
 import RoutesMain from "./routes";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { api } from "./services/api";
-import { useNavigate } from "react-router-dom";
+import { StyledText } from "./styles/typhography";
+
 
 function App() {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
 
-  async function userLogin(formData, setLoading) {
-    try {
-      setLoading(true);
-      const response = await api.post("/sessions", formData);
-      localStorage.setItem("@TOKEN", response.data.token);
-      toast.success(response.statusText);
-      setUser(response.data.user);
-      navigate("/home");
-    } catch (error) {
-      toast.error(error.response.data.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  function userLogout() {
-    localStorage.removeItem("@TOKEN");
-    setUser(null);
-    navigate("/");
-  }
+  const {globalLoading} = useContext(UserContext)
 
   return (
     <div className="App">
+      { globalLoading ? (
+        <StyledText tag="h1" color="black" textAlign="center">
+          Carregando...
+        </StyledText>
+      ) : (
+        
       <>
-        <RoutesMain userLogin={userLogin} user={user} userLogout={userLogout} />
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+        <RoutesMain />
       </>
+      )}
     </div>
   );
 }
