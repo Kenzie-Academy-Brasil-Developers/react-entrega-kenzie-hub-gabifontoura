@@ -1,50 +1,69 @@
 import React, { useContext } from "react";
-
 import Header from "../../components/Header";
+import TechList from "../../components/TechList";
 import { UserContext } from "../../providers/UserContext";
 import { StyledButton } from "../../styles/buttons";
+import { ContainerHome } from "../../styles/Containers";
 import { StyledFlexBox, StyledFlexBoxCol } from "../../styles/StyledFlexBox";
 import { StyledText } from "../../styles/typhography";
 import { StyledHomePage } from "./styles";
+import { GoPlus } from "react-icons/go"
+import { TechContext } from "../../providers/TechContext";
+import TechCreateModal from "../../components/TechModalCreate";
 
 const HomePage = () => {
+  const { user, userLogout } = useContext(UserContext);
+  const { isModalVisible, setIsModalVisible } = useContext(TechContext);
 
-  const { user, userLogout } = useContext(UserContext)
-  
   return (
-    
-    <StyledHomePage>
-      <StyledFlexBox>
-        <Header />
-        {user && (
-          <StyledButton
-            buttonSize="medium"
-            buttonStyle="darkGrey"
-            onClick={() => userLogout()}
-          >
-            Sair
-          </StyledButton>
-        )}
-      </StyledFlexBox>
+ 
+      <StyledHomePage>
 
-      {user && (
-        <StyledFlexBoxCol>
+        <div className="lines"></div>
+        
+        <ContainerHome>
           <StyledFlexBox>
-            <StyledText tag="h2" fontSize="three">Olá, {user.name}</StyledText>
-            <StyledText tag="p" fontSize="bodyText">
-              {user.course_module}
-            </StyledText>
+            <Header />
+            {user && (
+              <StyledButton
+                buttonSize="medium"
+                buttonStyle="darkGrey"
+                onClick={() => userLogout()}
+              >
+                Sair
+              </StyledButton>
+            )}
           </StyledFlexBox>
 
-          <StyledText tag="h3">
-            Que pena! Estamos em desenvolvimento :(
-          </StyledText>
-          <StyledText tag="h4">
-            Nossa aplicação está em desenvolvimento, em breve teremos novidades
-          </StyledText>
-        </StyledFlexBoxCol>
-      )}
-    </StyledHomePage>
+          {user && (
+            <StyledFlexBox className="intro">
+              <StyledText tag="h2" fontSize="three">
+                Olá, {user.name}
+              </StyledText>
+              <StyledText tag="p" fontSize="bodyText">
+                {user.course_module}
+              </StyledText>
+            </StyledFlexBox>
+          )}
+
+          <StyledFlexBoxCol>
+            <StyledFlexBox>
+
+              <StyledText tag="h2">Tecnologias</StyledText>
+
+              <StyledButton buttonStyle="darkGrey" className="btn-plus" onClick={ () => setIsModalVisible(true)} >
+                 <GoPlus />
+              </StyledButton>
+
+            </StyledFlexBox>
+            <TechList />
+          </StyledFlexBoxCol>
+        </ContainerHome>
+
+              {isModalVisible && <TechCreateModal /> }
+
+      </StyledHomePage>
+  
   );
 };
 

@@ -5,6 +5,8 @@ export const StyledFieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
+
 `;
 
 export const StyledLabel = styled.label`
@@ -19,7 +21,7 @@ export const StyledInput = styled.input`
   color: var(--color-grey-0);
   padding: 0 1rem;
   height: 3.5rem;
-  width: 22rem;
+  width: 100%;
 
   &:focus {
     
@@ -31,9 +33,6 @@ export const StyledInput = styled.input`
     cursor: not-allowed;
   }
 
-  @media (max-width: 800px) {
-    width: 100%;
-  }
 `;
 
 export const StyledSelect = styled.select`
@@ -44,7 +43,7 @@ export const StyledSelect = styled.select`
   color: var(--color-grey-0);
   padding: 0 1rem;
   height: 3.5rem;
-  width: 22rem;
+  width: 100%;
 
   &:focus {
     outline: 2px solid var(--color-primary-focus);
@@ -55,7 +54,5 @@ export const StyledSelect = styled.select`
     cursor: not-allowed;
   }
 
-  @media (max-width: 800px) {
-    width: 100%;
-  }
+
 `;
