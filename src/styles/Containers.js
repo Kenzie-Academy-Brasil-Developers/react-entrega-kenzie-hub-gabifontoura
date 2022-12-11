@@ -44,3 +44,15 @@ export const Container2 = styled.main`
     
    }
 `
+
+
+export const ContainerHome = styled.main`
+
+    width: 100vw;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 6rem;
+ 
+`

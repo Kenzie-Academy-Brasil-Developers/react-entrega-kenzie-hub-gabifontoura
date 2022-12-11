@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import App from './App';
+import { TechProvider } from './providers/TechContext';
 import { UserProvider } from './providers/UserContext';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './styles/global';
@@ -14,7 +15,9 @@ root.render(
     <BrowserRouter>
       <GlobalStyle />
       <UserProvider>
-        <App />
+        <TechProvider>
+          <App />
+        </TechProvider>
       </UserProvider> 
       <ToastContainer
           position="top-right"

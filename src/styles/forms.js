@@ -9,10 +9,9 @@ justify-content: center;
 padding: 2rem;
 gap: 1rem;
 overflow-x: hidden;
+width: 100%;
+max-width: 26rem;
 
-@media (max-width: 800px) {
-  width: 100%;
-}
 
   .main-nav-active {
     color: var(--color-grey-0);

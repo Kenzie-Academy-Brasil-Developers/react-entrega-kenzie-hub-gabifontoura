@@ -8,11 +8,26 @@ export const StyledHomePage = styled.main`
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  padding: 2rem 6rem;
 
-  @media (max-width: 800px) {
-    padding: 2rem;
+  .lines {
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-grey-1);
+    border-bottom: 1px solid var(--color-grey-1);
+    position: absolute;
+    top: 6rem;
+    width: 100%;
   }
 
- 
+  .intro {
+    padding: 3rem 0;
+    margin-bottom: 1rem;
+
+  }
+
+  .btn-plus{
+    height: 2.25rem;
+    padding: 0.75rem;
+  }
+
+
 `;

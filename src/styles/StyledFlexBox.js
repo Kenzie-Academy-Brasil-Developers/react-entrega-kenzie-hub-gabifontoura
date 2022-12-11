@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledFlexBox = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap:3rem;
 
   @media (max-width: 800px) {
@@ -13,6 +14,8 @@ export const StyledFlexBox = styled.div`
   @media (max-width: 400px) {
     margin: 0.6rem 0rem ;
   }
+
+ 
 `;
 
 export const StyledFlexBoxCol = styled.div`
