@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { UserContext } from "./UserContext";
@@ -11,16 +11,27 @@ export const TechProvider = ({ children }) => {
   const token = localStorage.getItem("@TOKEN");
 
   const { user } = useContext(UserContext);
+ 
+  const techListAPI = user && user.techs;
 
-    
-    // const techListAPI = user.techs.map((tech) => console.log(tech))
-    
   const [techList, setTechList] = useState();
-    
 
+  useEffect(() => {
+    setTechList(techListAPI)
+  
+    return () => {
+    
+    console.log("help")
+
+    }
+  }, [techListAPI])
+  
+  
+
+  
   async function addTech(formData, setLoading) {
     try {
-      if (user) {
+     
         setLoading(true);
         const response = await api.post("/users/techs", formData, {
           headers: {
@@ -30,12 +41,11 @@ export const TechProvider = ({ children }) => {
 
         toast.success(response.statusText);
 
-        const techListAPI = user.techs;
+        setIsModalVisible(false);
+        setTechList(techList => [...techList, formData])
+       
 
-        setTechList([...techListAPI, formData]);
 
-      }
-      setIsModalVisible(false);
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
@@ -50,16 +60,13 @@ export const TechProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-
-      if (user) {
+      
         setLoading(true);
-
-        const newList = techList.filter((tech) => tech.id !== id);
-
-        setTechList(newList);
-  
         toast.success(response.statusText);
-      }
+
+        const filteredTechList = techList.filter(tech => tech.id !== id )
+        setTechList(filteredTechList)
+      
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {

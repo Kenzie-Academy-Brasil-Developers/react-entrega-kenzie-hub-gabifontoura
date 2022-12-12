@@ -72,11 +72,12 @@ const TechCreateModal = () => {
             placeholder="Digite aqui o nome da tecnologia"
             register={register("title")}
             disabled={loading}
+            required
           />
 
           <StyledFieldset>
             <StyledLabel>Selecionar status</StyledLabel>
-            <StyledSelect {...register("status")} disabled={loading}>
+            <StyledSelect {...register("status")} disabled={loading} required>
               <option value="">Selecionar status</option>
               <option value="Iniciante">Iniciante</option>
               <option value="Intermediário">Intermediário</option>

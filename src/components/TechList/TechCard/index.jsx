@@ -10,6 +10,8 @@ const TechCard = ({ tech }) => {
   const { removeTech } = useContext(TechContext);
   const [loading, setLoading] = useState(false);
 
+  console.log(tech)
+
   return (
     <StyledTechCard>
       <StyledText tag="h3">{tech.title}</StyledText>
