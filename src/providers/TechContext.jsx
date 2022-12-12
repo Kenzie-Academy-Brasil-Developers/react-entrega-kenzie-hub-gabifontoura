@@ -16,17 +16,13 @@ export const TechProvider = ({ children }) => {
 
   const [techList, setTechList] = useState();
 
+  
   useEffect(() => {
     setTechList(techListAPI)
-  
-    return () => {
-    
-    console.log("help")
-
-    }
   }, [techListAPI])
   
   
+
 
   
   async function addTech(formData, setLoading) {
@@ -39,11 +35,13 @@ export const TechProvider = ({ children }) => {
           },
         });
 
-        toast.success(response.statusText);
+        console.log(response)
 
+        toast.success(response.statusText);
+        
         setIsModalVisible(false);
-        setTechList(techList => [...techList, formData])
-       
+        setTechList(techList => [...techList, response.data])
+        
 
 
     } catch (error) {
@@ -52,6 +50,12 @@ export const TechProvider = ({ children }) => {
       setLoading(false);
     }
   }
+
+
+
+
+
+
 
   async function removeTech(id, setLoading) {
     try {

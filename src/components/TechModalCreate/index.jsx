@@ -8,7 +8,7 @@ import {
   StyledSelect,
 } from "../InputField/styles";
 import { StyledModalBox, StyledModalBg } from "./styles";
-import { CgClose, CgOpenCollective } from "react-icons/cg";
+import { CgClose } from "react-icons/cg";
 import { TechContext } from "../../providers/TechContext";
 import { StyledForm } from "../../styles/forms";
 import { useForm } from "react-hook-form";
