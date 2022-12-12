@@ -19,6 +19,6 @@ export const ContainerHome = styled.main`
   padding: 2rem 6rem;
 
   @media (max-width: 800px) {
-    padding: 1.5rem ;
+    padding: 1.5rem;
   }
 `;

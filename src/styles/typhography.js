@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-
 import BaseText from "./BaseText";
 
 export const StyledText = styled(BaseText)`

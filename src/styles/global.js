@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
-
 :root{
     
     
@@ -19,7 +18,6 @@ export const GlobalStyle = createGlobalStyle`
     --color-success: #3FE864;
     --color-negative: #E83F5B;
 
-
     --radius-1: 0.5rem;
     --radius-2: 0.25rem;
 
@@ -31,13 +29,9 @@ export const GlobalStyle = createGlobalStyle`
     --font-size-text-3:0.75rem; /* 12px*/
     --font-size-text-4:0.625rem; /* 10px*/
 
-
     --font-weight-1:700;
     --font-weight-2:600;
     --font-weight-3:400;
-
-
-
 
 }
 

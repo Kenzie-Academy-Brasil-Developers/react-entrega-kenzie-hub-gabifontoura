@@ -6,8 +6,6 @@ export const StyledFieldset = styled.fieldset`
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  
-
 `;
 
 export const StyledLabel = styled.label`
@@ -15,7 +13,6 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledInput = styled.input`
-
   border: none;
   border-radius: var(--radius-1);
   background-color: var(--color-grey-2);
@@ -25,15 +22,12 @@ export const StyledInput = styled.input`
   width: 100%;
 
   &:focus {
-    
     outline: 2px solid var(--color-primary-focus);
   }
 
-  
-  &:disabled{
+  &:disabled {
     cursor: not-allowed;
   }
-
 `;
 
 export const StyledSelect = styled.select`
@@ -48,12 +42,9 @@ export const StyledSelect = styled.select`
 
   &:focus {
     outline: 2px solid var(--color-primary-focus);
-  
   }
 
-  &:disabled{
+  &:disabled {
     cursor: not-allowed;
   }
-
-
 `;

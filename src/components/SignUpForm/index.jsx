@@ -4,7 +4,11 @@ import InputField from "../InputField";
 import { registerSchema } from "./registerSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { StyledText } from "../../styles/typhography";
-import { StyledFieldset, StyledLabel, StyledSelect } from "../InputField/styles";
+import {
+  StyledFieldset,
+  StyledLabel,
+  StyledSelect,
+} from "../InputField/styles";
 
 import { StyledButton } from "../../styles/buttons";
 import { StyledForm } from "../../styles/forms";
@@ -14,10 +18,10 @@ import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
   const navigate = useNavigate();
-  
-  const [loading, setLoading ] = useState(false);
 
-  const { userRegister } = useContext(UserContext)
+  const [loading, setLoading] = useState(false);
+
+  const { userRegister } = useContext(UserContext);
 
   const {
     register,
@@ -38,13 +42,11 @@ const SignUpForm = () => {
   });
 
   const submit = (data) => {
- 
     reset();
     userRegister(data, setLoading);
-    navigate("/")
-    
+    navigate("/");
   };
-  
+
   return (
     <StyledForm noValidate onSubmit={handleSubmit(submit)}>
       <StyledText tag="h2" fontSize="two" textAlign="center">
@@ -61,7 +63,6 @@ const SignUpForm = () => {
         placeholder="Digite aqui seu nome"
         register={register("name")}
         disabled={loading}
-        
       />
       {errors.name?.message && (
         <StyledText tag="p" fontSize="warnText">
@@ -169,7 +170,6 @@ const SignUpForm = () => {
         buttonSize="default"
         buttonStyle="primary"
         disabled={loading}
-       
       >
         {loading ? "Cadastrando..." : "Cadastrar"}
       </StyledButton>

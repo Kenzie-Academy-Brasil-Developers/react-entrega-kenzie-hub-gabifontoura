@@ -30,5 +30,4 @@ export const StyledModalBox = styled.div`
     background-color: var(--color-grey-2);
     padding: 1rem;
   }
-
 `;

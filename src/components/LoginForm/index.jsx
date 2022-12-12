@@ -13,7 +13,7 @@ import { UserContext } from "../../providers/UserContext";
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
 
-  const { userLogin } = useContext(UserContext)
+  const { userLogin } = useContext(UserContext);
 
   const {
     register,
@@ -62,7 +62,12 @@ const LoginForm = () => {
         </StyledText>
       )}
 
-      <StyledButton type="submit" buttonStyle="primary" buttonSize="default" disabled={loading}>
+      <StyledButton
+        type="submit"
+        buttonStyle="primary"
+        buttonSize="default"
+        disabled={loading}
+      >
         {loading ? "Entrando" : "Entrar"}
       </StyledButton>
 
