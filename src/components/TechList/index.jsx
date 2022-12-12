@@ -1,18 +1,17 @@
 import React, { useContext } from "react";
-import { UserContext } from "../../providers/UserContext";
+import { TechContext } from "../../providers/TechContext";
+// import { UserContext } from "../../providers/UserContext";
 
 import { StyledTechList } from "./styles";
 import TechCard from "./TechCard";
 
 const TechList = () => {
-  const { user } = useContext(UserContext);
-  const techList = user.techs;
+  const { techList } = useContext(TechContext);
 
   return (
     <StyledTechList>
-      {techList.map((tech, index) => (
-        <TechCard key={index} tech={tech} />
-      ))}
+      {techList &&
+        techList.map((tech) => <TechCard key={tech.id} tech={tech} />)}
     </StyledTechList>
   );
 };
