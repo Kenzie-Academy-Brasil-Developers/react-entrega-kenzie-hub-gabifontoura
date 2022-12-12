@@ -7,10 +7,7 @@ import { StyledFlexBox, StyledRegisterPage } from "./styles";
 
 import { NavLink } from "react-router-dom";
 
-
 const RegisterPage = () => {
-
-
   return (
     <StyledRegisterPage>
       <Container>
@@ -20,7 +17,7 @@ const RegisterPage = () => {
             Voltar
           </NavLink>
         </StyledFlexBox>
-        <SignUpForm/>
+        <SignUpForm />
       </Container>
     </StyledRegisterPage>
   );

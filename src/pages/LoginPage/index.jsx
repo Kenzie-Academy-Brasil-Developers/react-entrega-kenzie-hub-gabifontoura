@@ -8,8 +8,8 @@ const LoginPage = () => {
   return (
     <StyledLoginPage>
       <Container>
-          <Header />
-          <LoginForm />
+        <Header />
+        <LoginForm />
       </Container>
     </StyledLoginPage>
   );

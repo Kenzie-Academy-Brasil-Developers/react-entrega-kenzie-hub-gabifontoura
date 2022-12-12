@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { StyledButton } from "../../styles/buttons";
 import { StyledText } from "../../styles/typhography";
 import InputField from "../InputField";
@@ -8,10 +8,11 @@ import {
   StyledSelect,
 } from "../InputField/styles";
 import { StyledModalBox, StyledModalBg } from "./styles";
-import { CgClose } from "react-icons/cg";
+import { CgClose, CgOpenCollective } from "react-icons/cg";
 import { TechContext } from "../../providers/TechContext";
 import { StyledForm } from "../../styles/forms";
 import { useForm } from "react-hook-form";
+import { useRef } from "react";
 
 const TechCreateModal = () => {
   const { setIsModalVisible, addTech } = useContext(TechContext);
@@ -20,19 +21,42 @@ const TechCreateModal = () => {
   const {
     register,
     handleSubmit,
-    // formState: { errors },
     reset,
   } = useForm();
 
   function submit(data) {
 
-    addTech(data, setLoading);
-    reset()
+    if (
+      data.title !== "" &&
+      data.status !== "" ){
+
+        addTech(data, setLoading);
+        reset();
+      }
   }
+
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    function modalOutClick(event) {
+      const target = event.target;
+      const element = modalRef.current;
+
+      if (!element.contains(target)) {
+        setIsModalVisible(false);
+      }
+    }
+
+    window.addEventListener("mousedown", modalOutClick);
+
+    return () => {
+      window.removeEventListener("mousedown", modalOutClick);
+    };
+  }, []);
 
   return (
     <StyledModalBg>
-      <StyledModalBox>
+      <StyledModalBox ref={modalRef}>
         <div className="modal-header">
           <StyledText tag="h5">Cadastrar Tecnologia</StyledText>
           <StyledButton onClick={() => setIsModalVisible(false)}>

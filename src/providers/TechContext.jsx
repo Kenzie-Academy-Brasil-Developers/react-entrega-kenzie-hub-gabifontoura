@@ -3,90 +3,81 @@ import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { UserContext } from "./UserContext";
 
-
 export const TechContext = createContext({});
 
-export const TechProvider = ({children}) => {
+export const TechProvider = ({ children }) => {
+  const [isModalVisible, setIsModalVisible] = useState(null);
 
-    const [isModalVisible, setIsModalVisible] = useState(null);
+  const token = localStorage.getItem("@TOKEN");
+
+  const { user } = useContext(UserContext);
+
     
-    const token = localStorage.getItem("@TOKEN");
+    // const techListAPI = user.techs.map((tech) => console.log(tech))
+    
+  const [techList, setTechList] = useState();
+    
 
-    const { user } = useContext(UserContext)
+  async function addTech(formData, setLoading) {
+    try {
+      if (user) {
+        setLoading(true);
+        const response = await api.post("/users/techs", formData, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
+        toast.success(response.statusText);
 
-      const[techList,setTechList] = useState([])
-      
-      
-      async function addTech(formData, setLoading) {
-        
-        
-        try {
-          if(user){
-          setLoading(true);
-          const response = await api.post("/users/techs", formData, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }});
+        const techListAPI = user.techs;
 
-          toast.success(response.statusText);
- 
+        setTechList([...techListAPI, formData]);
 
-            const techListAPI = user.techs
-            console.log(techListAPI)
-
-            setTechList([...techListAPI, formData])
-            console.log(techList)
-            
-          }
-          setIsModalVisible(false)
-          
-        } catch (error) {
-          
-          toast.error(error.response.data.message);
-        } 
-        finally {
-          setLoading(false);
-        }
       }
-      
-      
-      async function removeTech(id, setLoading){
-        try {
-          const response = await api.delete("/users/techs/" + id,  {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }});
-                  
-          if(user){
+      setIsModalVisible(false);
+    } catch (error) {
+      toast.error(error.response.data.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-            setLoading(true)
+  async function removeTech(id, setLoading) {
+    try {
+      const response = await api.delete("/users/techs/" + id, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-            
-            const newList = techList.filter(
-              (tech) => tech.id !== id
-              );
-              
-              setTechList(newList)
-            console.log(newList)
-          toast.success(response.statusText);
-                   
-          }
-          
-        } catch (error) {
-          toast.error(error.response.data.message);
-          
-        } finally{
-          setLoading(false)
-          
-        }
+      if (user) {
+        setLoading(true);
+
+        const newList = techList.filter((tech) => tech.id !== id);
+
+        setTechList(newList);
+  
+        toast.success(response.statusText);
       }
-    
+    } catch (error) {
+      toast.error(error.response.data.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-    
-    return(
-        <TechContext.Provider value={{isModalVisible, setIsModalVisible, addTech, removeTech, techList}}>
-            {children}
-        </TechContext.Provider>
-    )
-}
+  return (
+    <TechContext.Provider
+      value={{
+        isModalVisible,
+        setIsModalVisible,
+        addTech,
+        removeTech,
+        techList,
+      }}
+    >
+      {children}
+    </TechContext.Provider>
+  );
+};

@@ -27,7 +27,6 @@ export const StyledHomePage = styled.main`
       flex-direction: column;
       gap: 1rem;
       align-items: flex-start;
- 
     }
   }
 

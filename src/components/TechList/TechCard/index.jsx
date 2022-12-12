@@ -7,10 +7,8 @@ import { useContext } from "react";
 import { TechContext } from "../../../providers/TechContext";
 
 const TechCard = ({ tech }) => {
-
-  const { removeTech } = useContext(TechContext)
+  const { removeTech } = useContext(TechContext);
   const [loading, setLoading] = useState(false);
-
 
   return (
     <StyledTechCard>
@@ -19,7 +17,10 @@ const TechCard = ({ tech }) => {
         <StyledText tag="p" fontSize="bodyText">
           {tech.status}
         </StyledText>
-        <StyledButton onClick={()=> removeTech(tech.id, setLoading)} disabled={loading}>
+        <StyledButton
+          onClick={() => removeTech(tech.id, setLoading)}
+          disabled={loading}
+        >
           <FiTrash2 color="white" />
         </StyledButton>
       </div>

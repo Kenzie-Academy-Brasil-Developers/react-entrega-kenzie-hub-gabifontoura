@@ -6,7 +6,7 @@ import { StyledHeader } from "./styles";
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledText tag="h1" fontSize="one" textAlign="center" >
+      <StyledText tag="h1" fontSize="one" textAlign="center">
         Kenzie Hub
       </StyledText>
     </StyledHeader>
