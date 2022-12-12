@@ -62,5 +62,24 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Inter", sans-serif;
     }
 
-    
+    .flex{
+        display: flex;
+    }
+
+
+    .column{
+        flex-direction: column;
+    }
+
+    .between{
+        justify-content: space-between;
+    }
+
+    .align-center{
+        align-items: center;
+    }
+
+    .gap-1rem{
+        gap:1rem;
+    }
 `;

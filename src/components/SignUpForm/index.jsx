@@ -38,12 +38,13 @@ const SignUpForm = () => {
   });
 
   const submit = (data) => {
-    
+ 
     reset();
     userRegister(data, setLoading);
     navigate("/")
     
   };
+  
   return (
     <StyledForm noValidate onSubmit={handleSubmit(submit)}>
       <StyledText tag="h2" fontSize="two" textAlign="center">

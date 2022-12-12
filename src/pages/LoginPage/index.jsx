@@ -1,19 +1,16 @@
 import React from "react";
 import Header from "../../components/Header";
 import LoginForm from "../../components/LoginForm";
-import { Container2 } from "../../styles/Containers";
-import {StyledFlexBoxCol} from "../../styles/StyledFlexBox"
+import { Container } from "../../styles/Containers";
 import { StyledLoginPage } from "./styles";
 
 const LoginPage = () => {
   return (
     <StyledLoginPage>
-      <Container2>
-        <StyledFlexBoxCol>
+      <Container>
           <Header />
           <LoginForm />
-        </StyledFlexBoxCol>
-      </Container2>
+      </Container>
     </StyledLoginPage>
   );
 };

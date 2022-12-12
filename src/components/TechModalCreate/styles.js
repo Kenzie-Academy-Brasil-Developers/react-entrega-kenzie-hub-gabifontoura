@@ -9,6 +9,7 @@ export const StyledModalBg = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 `;
 
 export const StyledModalBox = styled.div`
@@ -30,11 +31,4 @@ export const StyledModalBox = styled.div`
     padding: 1rem;
   }
 
-  .modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    padding: 2rem;
-  }
 `;
