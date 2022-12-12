@@ -12,6 +12,5 @@ export const StyledTechCard = styled.li`
         background-color: var(--color-grey-2);
     }
     
-
     
 `

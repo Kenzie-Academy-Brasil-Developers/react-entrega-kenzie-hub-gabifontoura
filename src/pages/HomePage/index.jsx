@@ -4,7 +4,6 @@ import TechList from "../../components/TechList";
 import { UserContext } from "../../providers/UserContext";
 import { StyledButton } from "../../styles/buttons";
 import { ContainerHome } from "../../styles/Containers";
-import { StyledFlexBox, StyledFlexBoxCol } from "../../styles/StyledFlexBox";
 import { StyledText } from "../../styles/typhography";
 import { StyledHomePage } from "./styles";
 import { GoPlus } from "react-icons/go"
@@ -14,15 +13,16 @@ import TechCreateModal from "../../components/TechModalCreate";
 const HomePage = () => {
   const { user, userLogout } = useContext(UserContext);
   const { isModalVisible, setIsModalVisible } = useContext(TechContext);
-
+  
   return (
- 
-      <StyledHomePage>
+    
+    <StyledHomePage>
+        {isModalVisible && <TechCreateModal /> }
 
         <div className="lines"></div>
-        
+
         <ContainerHome>
-          <StyledFlexBox>
+          <div className="flex between align-center">
             <Header />
             {user && (
               <StyledButton
@@ -33,34 +33,33 @@ const HomePage = () => {
                 Sair
               </StyledButton>
             )}
-          </StyledFlexBox>
+          </div>
 
           {user && (
-            <StyledFlexBox className="intro">
-              <StyledText tag="h2" fontSize="three">
+            <div className="intro flex between">
+              <StyledText tag="h3" fontSize="three">
                 Olá, {user.name}
               </StyledText>
               <StyledText tag="p" fontSize="bodyText">
                 {user.course_module}
               </StyledText>
-            </StyledFlexBox>
+            </div>
           )}
 
-          <StyledFlexBoxCol>
-            <StyledFlexBox>
+          <div className="flex column gap-1rem">
+            <div className="flex between">
 
-              <StyledText tag="h2">Tecnologias</StyledText>
+              <StyledText tag="h3">Tecnologias</StyledText>
 
               <StyledButton buttonStyle="darkGrey" className="btn-plus" onClick={ () => setIsModalVisible(true)} >
                  <GoPlus />
               </StyledButton>
 
-            </StyledFlexBox>
+            </div>
             <TechList />
-          </StyledFlexBoxCol>
+          </div>
         </ContainerHome>
 
-              {isModalVisible && <TechCreateModal /> }
 
       </StyledHomePage>
   

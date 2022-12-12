@@ -3,10 +3,10 @@ import Header from "../../components/Header";
 import SignUpForm from "../../components/SignUpForm";
 
 import { Container } from "../../styles/Containers";
-import { StyledRegisterPage } from "./styles";
+import { StyledFlexBox, StyledRegisterPage } from "./styles";
 
 import { NavLink } from "react-router-dom";
-import { StyledFlexBox } from "../../styles/StyledFlexBox";
+
 
 const RegisterPage = () => {
 

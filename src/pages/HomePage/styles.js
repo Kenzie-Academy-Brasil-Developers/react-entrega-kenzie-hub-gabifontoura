@@ -10,24 +10,29 @@ export const StyledHomePage = styled.main`
   overflow-x: hidden;
 
   .lines {
-    padding: 3rem 0;
-    border-top: 1px solid var(--color-grey-1);
-    border-bottom: 1px solid var(--color-grey-1);
+    padding: 3.2rem 0;
+    border-top: 1px solid var(--color-grey-2);
+    border-bottom: 1px solid var(--color-grey-2);
     position: absolute;
-    top: 6rem;
+    top: 7rem;
     width: 100%;
   }
 
   .intro {
     padding: 3rem 0;
     margin-bottom: 1rem;
+    align-items: center;
 
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+ 
+    }
   }
 
-  .btn-plus{
+  .btn-plus {
     height: 2.25rem;
     padding: 0.75rem;
   }
-
-
 `;

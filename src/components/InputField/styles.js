@@ -6,6 +6,7 @@ export const StyledFieldset = styled.fieldset`
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+  
 
 `;
 

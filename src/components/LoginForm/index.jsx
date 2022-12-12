@@ -11,7 +11,6 @@ import { StyledForm } from "../../styles/forms";
 import { UserContext } from "../../providers/UserContext";
 
 const LoginForm = () => {
-  
   const [loading, setLoading] = useState(false);
 
   const { userLogin } = useContext(UserContext)

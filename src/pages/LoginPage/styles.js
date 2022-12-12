@@ -8,6 +8,5 @@ export const StyledLoginPage = styled.main`
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-
-
+  padding: 2rem;
 `;

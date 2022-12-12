@@ -14,7 +14,7 @@ export const StyledText = styled(BaseText)`
     switch (fontSize) {
       case "one":
         return css`
-          font-size: 1.625rem;
+          font-size: 3rem;
 
           color: var(--color-primary);
 
@@ -27,7 +27,7 @@ export const StyledText = styled(BaseText)`
         `;
       case "two":
         return css`
-          font-size: var(--font-size-title-2);
+          font-size: 2rem;
           text-overflow: ellipsis;
 
           @media (max-width: 800px) {
@@ -39,7 +39,7 @@ export const StyledText = styled(BaseText)`
         `;
       case "three":
         return css`
-          font-size: var(--font-size-title-3);
+          font-size: 5rem;
           text-overflow: ellipsis;
 
           @media (max-width: 800px) {
@@ -58,7 +58,7 @@ export const StyledText = styled(BaseText)`
             font-size: var(--font-size-text-3);
           }
           @media (max-width: 400px) {
-            font-size: var(--font-size-text-3);
+            font-size: var(--font-size-text-2);
           }
         `;
       case "warnText":
