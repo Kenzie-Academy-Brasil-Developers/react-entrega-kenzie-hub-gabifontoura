@@ -6,17 +6,15 @@ import { UserContext } from "./UserContext";
 export const TechContext = createContext({});
 
 export const TechProvider = ({ children }) => {
+  const { user } = useContext(UserContext);
+  const techListAPI = user && user.techs;
+
   const [isModalVisible, setIsModalVisible] = useState(null);
   const [isModalUpdateVisible, setIsModalUpdateVisible] = useState(null);
   const [selectedTech, setSelectedTech] = useState({});
+  const [techList, setTechList] = useState();
 
   const token = localStorage.getItem("@TOKEN");
-
-  const { user } = useContext(UserContext);
-
-  const techListAPI = user && user.techs;
-
-  const [techList, setTechList] = useState();
 
   useEffect(() => {
     setTechList(techListAPI);

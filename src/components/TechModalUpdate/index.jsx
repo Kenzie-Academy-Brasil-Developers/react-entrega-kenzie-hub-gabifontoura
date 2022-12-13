@@ -16,7 +16,8 @@ import { StyledModalBg, StyledModalBox } from "../../styles/modal";
 import useOutClick from "../../hooks/hookOutClick";
 
 const TechUpdateModal = () => {
-  const { setIsModalUpdateVisible, updateTech, removeTech, selectedTech } = useContext(TechContext);
+  const { setIsModalUpdateVisible, updateTech, removeTech, selectedTech } =
+    useContext(TechContext);
   const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, reset } = useForm();
