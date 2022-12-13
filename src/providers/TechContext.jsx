@@ -7,44 +7,37 @@ export const TechContext = createContext({});
 
 export const TechProvider = ({ children }) => {
   const [isModalVisible, setIsModalVisible] = useState(null);
+  const [isModalUpdateVisible, setIsModalUpdateVisible] = useState(null);
+  const [selectedTech, setSelectedTech] = useState({})
+  const [status, setStatus] = useState({})
+
+
 
   const token = localStorage.getItem("@TOKEN");
 
   const { user } = useContext(UserContext);
- 
+
   const techListAPI = user && user.techs;
 
   const [techList, setTechList] = useState();
 
   useEffect(() => {
-    setTechList(techListAPI)
-  
-    return () => {
-    
-    console.log("help")
+    setTechList(techListAPI);
+  }, [techListAPI]);
 
-    }
-  }, [techListAPI])
-  
-  
-
-  
   async function addTech(formData, setLoading) {
     try {
-     
-        setLoading(true);
-        const response = await api.post("/users/techs", formData, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+      const response = await api.post("/users/techs", formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      setLoading(true);
+      toast.success(response.statusText);
 
-        toast.success(response.statusText);
-
-        setIsModalVisible(false);
-        setTechList(techList => [...techList, formData])
-       
-
+      setIsModalVisible(false);
+      setTechList([...techList, response.data]);
 
     } catch (error) {
       toast.error(error.response.data.message);
@@ -60,19 +53,54 @@ export const TechProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      
-        setLoading(true);
-        toast.success(response.statusText);
 
-        const filteredTechList = techList.filter(tech => tech.id !== id )
-        setTechList(filteredTechList)
-      
+      setLoading(true);
+      toast.success(response.statusText);
+
+      const filteredTechList = techList.filter((tech) => tech.id !== id);
+      setTechList(filteredTechList);
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }
   }
+
+  async function updateTech(id, formData, setLoading){
+    try {
+      const response = await api.put("/users/techs/" + id, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+     
+      setLoading(true);
+      toast.success(response.statusText);
+      setIsModalUpdateVisible(false);
+
+      const newStatus = techList.map((tech) => {
+        if(tech.id === id){
+          return {...tech, status: formData.status}
+        }else{
+          return {...tech}
+        }
+        
+      })
+      
+ 
+      setTechList(newStatus)
+
+    } catch (error) {
+      toast.error(error.response.data.message);
+      
+
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
 
   return (
     <TechContext.Provider
@@ -82,6 +110,12 @@ export const TechProvider = ({ children }) => {
         addTech,
         removeTech,
         techList,
+        isModalUpdateVisible,
+        setIsModalUpdateVisible,
+        updateTech,
+        selectedTech, 
+        setSelectedTech,
+        status, setStatus
       }}
     >
       {children}
