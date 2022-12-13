@@ -20,33 +20,20 @@ const TechCreateModal = () => {
   const { setIsModalVisible, addTech } = useContext(TechContext);
   const [loading, setLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   function submit(data) {
-
-    if (
-      data.title !== "" &&
-      data.status !== "" ){
-
-        addTech(data, setLoading);
-        reset();
-      }
+    if (data.title !== "" && data.status !== "") {
+      addTech(data, setLoading);
+      reset();
+    }
   }
 
-  const modalRef = useOutClick(
-    () => setIsModalVisible(null)
-  );
-
-
+  const modalRef = useOutClick(() => setIsModalVisible(null));
 
   return (
     <StyledModalBg>
       <StyledModalBox ref={modalRef}>
-        
         <div className="modal-header">
           <StyledText tag="h5">Cadastrar Tecnologia</StyledText>
           <StyledButton onClick={() => setIsModalVisible(false)}>

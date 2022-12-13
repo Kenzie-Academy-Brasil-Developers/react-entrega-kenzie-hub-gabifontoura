@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import { TechContext } from "../../providers/TechContext";
 import TechUpdateModal from "../TechModalUpdate";
 
-
 import { StyledTechList } from "./styles";
 import TechCard from "./TechCard";
 
