@@ -76,7 +76,9 @@ const TechUpdateModal = () => {
             <StyledButton
               buttonStyle="secondary"
               buttonSize="default"
-              onClick={() => removeTech(selectedTech.id, setLoading)}
+              onClick={() => {
+                removeTech(selectedTech.id, setLoading)
+                setIsModalUpdateVisible(false)}}
               type="button"
             >
               Excluir
