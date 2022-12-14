@@ -2,7 +2,8 @@
 import { useContext } from "react";
 import { UserContext } from "./providers/UserContext";
 import RoutesMain from "./routes";
-import { StyledText } from "./styles/typhography";
+import { StyledLoading } from "./styles/Containers";
+import {ImSpinner6} from "react-icons/im"
 
 
 function App() {
@@ -12,9 +13,11 @@ function App() {
   return (
     <div className="App">
       { globalLoading ? (
-        <StyledText tag="h1" color="black" textAlign="center">
-          Carregando...
-        </StyledText>
+        <StyledLoading>
+
+          <ImSpinner6 className="loading"/>
+          
+        </StyledLoading>
       ) : (
         
       <>

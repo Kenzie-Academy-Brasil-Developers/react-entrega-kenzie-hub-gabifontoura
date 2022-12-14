@@ -1,11 +1,13 @@
 import { Outlet, useNavigate } from "react-router-dom";
 
 import React, { useContext, useEffect } from "react";
-import { StyledText } from "../../styles/typhography";
+
 import { UserContext } from "../../providers/UserContext";
+import { StyledLoading } from "../../styles/Containers";
+import {ImSpinner6} from "react-icons/im"
 
 const ProtectedRoutes = () => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   const { user } = useContext(UserContext);
 
@@ -19,9 +21,9 @@ const ProtectedRoutes = () => {
       {user ? (
         <Outlet />
       ) : (
-        <StyledText tag="h1" color="black" textAlign="center">
-          Carregando...
-        </StyledText>
+        <StyledLoading>
+           <ImSpinner6 className="loading"/>
+        </StyledLoading>
       )}
     </>
   );

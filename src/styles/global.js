@@ -77,3 +77,4 @@ export const GlobalStyle = createGlobalStyle`
         gap:1rem;
     }
 `;
+

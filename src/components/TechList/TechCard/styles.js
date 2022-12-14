@@ -11,4 +11,9 @@ export const StyledTechCard = styled.li`
   &:hover {
     background-color: var(--color-grey-2);
   }
+
+  @media (max-width: 375px) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 `;

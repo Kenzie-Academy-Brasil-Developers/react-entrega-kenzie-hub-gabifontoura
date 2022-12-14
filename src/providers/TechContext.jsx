@@ -31,7 +31,6 @@ export const TechProvider = ({ children }) => {
       setLoading(true);
       toast.success(response.statusText);
 
-      setIsModalVisible(false);
       setTechList([...techList, response.data]);
     } catch (error) {
       toast.error(error.response.data.message);
