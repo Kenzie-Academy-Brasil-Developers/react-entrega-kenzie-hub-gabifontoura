@@ -2,7 +2,8 @@
 
 Esse projeto foi feito em React para exercitar consumo de APIs, com ciclo de vida completo CRUD, e rotas protegidas. É um Hub dos alunos com possibilidade de cadastrar as tecnologias as quais tem experiência, assim como editar o nível da experiência e deletá-las.
 <br>
-
+Acesse: https://react-entrega-kenzie-hub-gabifontoura.vercel.app/
+<br>
 
 ## Getting Started with Create React App
 
