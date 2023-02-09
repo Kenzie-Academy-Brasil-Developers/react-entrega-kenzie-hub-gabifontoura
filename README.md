@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# KenzieHUB
+
+Esse projeto foi feito em React para exercitar consumo de APIs, com ciclo de vida completo CRUD, e rotas protegidas. É um Hub dos alunos com possibilidade de cadastrar as tecnologias as quais tem experiência, assim como editar o nível da experiência e deletá-las.
+<br>PIs>
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
